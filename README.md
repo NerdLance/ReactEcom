@@ -8,4 +8,4 @@ In this project, we utilize Redux, Routes, Hooks, GraphQL, Stripe API, and Fireb
 
 ## Yours Truly
 
-Build by Lance Madden
+Built by Lance Madden
