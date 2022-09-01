@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/layout/Header'
+import Categories from './components/categories/Categories'
 
-function App() {
+import { bg1, bg2, bg3, bg4, bg5 } from './images/image-import'
+
+
+const App = () => {
+  const categories = [
+    {
+      id: 1,
+      title: 'Ground Coffee',
+      imageUrl: bg1
+    },
+    {
+      id: 2,
+      title: 'Whole Bean Coffee',
+      imageUrl: bg2
+    },
+    {
+      id: 3,
+      title: 'Coffee Apparel',
+      imageUrl: bg3
+    },
+    {
+      id: 4,
+      title: 'Coffee Mugs',
+      imageUrl: bg4
+    },
+    {
+      id: 5,
+      title: 'Coffee Accessories',
+      imageUrl: bg5
+    }
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Categories categories={categories} />
     </div>
   );
 }
