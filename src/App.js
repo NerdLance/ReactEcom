@@ -1,43 +1,22 @@
-import Header from './components/layout/Header'
-import Categories from './components/categories/Categories'
+import { Routes, Route } from 'react-router-dom'
 
-import { bg1, bg2, bg3, bg4, bg5 } from './images/image-import'
+import Home from './routes/home/Home'
+import Navigation from './routes/navigation/Navigation'
 
+const Shop = () => {
+  return (
+    <div>I am the Shop Page!</div>
+  )
+}
 
 const App = () => {
-  const categories = [
-    {
-      id: 1,
-      title: 'Ground Coffee',
-      imageUrl: bg1
-    },
-    {
-      id: 2,
-      title: 'Whole Bean Coffee',
-      imageUrl: bg2
-    },
-    {
-      id: 3,
-      title: 'Coffee Apparel',
-      imageUrl: bg3
-    },
-    {
-      id: 4,
-      title: 'Coffee Mugs',
-      imageUrl: bg4
-    },
-    {
-      id: 5,
-      title: 'Coffee Accessories',
-      imageUrl: bg5
-    }
-  ]
-
   return (
-    <div>
-      <Header />
-      <Categories categories={categories} />
-    </div>
+    <Routes>
+      <Route path='/' element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path='/shop' element={<Shop />} />
+      </Route>
+    </Routes>
   );
 }
 

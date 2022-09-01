@@ -5,10 +5,9 @@ const Category = ({category}) => {
     console.log(imageUrl)
     return (
         <div className='category-container'>
-            {/* <img /> */}
             <div className='background-image' style={{ backgroundImage: `url(${imageUrl})`}}></div>
             <div className='category-body-container'>
-                <h3>{title}</h3>
+                <h2>{title}</h2>
                 <p>Shop Now</p>
             </div>
         </div>
