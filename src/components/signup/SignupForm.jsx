@@ -32,7 +32,6 @@ const SignupForm = () => {
         }
 
         if (errors.length == 0) {
-
             try {
                 const { user } = await createAuthUserWithEmailAndPassword(email, password)
                 const userDocRef = await createUserDocumentFromAuth(user, { displayName })
@@ -43,11 +42,6 @@ const SignupForm = () => {
                 }
                 console.log(error)
             }
-            /*
-            const { user } = await createAuthUserWithEmailAndPassword(email, password)
-            const userDocRef = await createUserDocumentFromAuth(user)
-            console.log('User Created!')
-            */
         } else {
             console.log(errors)
         }
