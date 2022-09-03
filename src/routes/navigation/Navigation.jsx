@@ -3,12 +3,17 @@ import { Link, Outlet } from 'react-router-dom'
 
 import { ReactComponent as CoffeeLogo } from '../../images/branding/coffee-svg-icon.svg'
 import { UserContext } from '../../contexts/UserContext'
+import { CartContext } from '../../contexts/CartContext'
 import { signOutUser } from '../../utils/firebase/firebase.utils'
+
+import CartIcon from '../../components/cart-icon/CartIcon'
+import CartDropdown from '../../components/cart-dropdown/CartDropdown'
 
 import './navigation.styles.scss'
 
 const Navigation = () => {
     const { currentUser } = useContext(UserContext)
+    const { isOpen } = useContext(CartContext)
 
     return (
         <>
@@ -29,7 +34,11 @@ const Navigation = () => {
                             </Link>
                         )
                     }
+                    <CartIcon/>
                 </div>
+                {
+                    isOpen && <CartDropdown />
+                }
             </nav>
             <Outlet />
         </>

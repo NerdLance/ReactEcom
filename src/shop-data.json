@@ -1,0 +1,56 @@
+[
+    {
+      "id": 1,
+      "name": "Blue Magic Coffee",
+      "imageUrl": "blue-magic-coffee-bags.jpg",
+      "price": 25
+    },
+    {
+      "id": 2,
+      "name": "White Magic Coffee",
+      "imageUrl": "blue-magic-coffee-bags.jpg",
+      "price": 18
+    },
+    {
+      "id": 3,
+      "name": "Golden Goose Coffee",
+      "imageUrl": "blue-magic-coffee-bags.jpg",
+      "price": 35
+    },
+    {
+      "id": 4,
+      "name": "Dark Roast Coffee",
+      "imageUrl": "blue-magic-coffee-bags.jpg",
+      "price": 25
+    },
+    {
+      "id": 5,
+      "name": "Blue Mountain Coffee",
+      "imageUrl": "blue-magic-coffee-bags.jpg",
+      "price": 18
+    },
+    {
+      "id": 6,
+      "name": "Decaf Coffee",
+      "imageUrl": "blue-magic-coffee-bags.jpg",
+      "price": 14
+    },
+    {
+      "id": 7,
+      "name": "Strongest Blend Coffee Super Duper",
+      "imageUrl": "blue-magic-coffee-bags.jpg",
+      "price": 18
+    },
+    {
+      "id": 8,
+      "name": "Wolf Magic Coffee",
+      "imageUrl": "blue-magic-coffee-bags.jpg",
+      "price": 14
+    },
+    {
+      "id": 9,
+      "name": "Breakfast Coffee",
+      "imageUrl": "blue-magic-coffee-bags.jpg",
+      "price": 16
+    }
+  ]
