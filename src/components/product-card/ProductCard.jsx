@@ -9,7 +9,9 @@ const ProductCard = ({ product }) => {
     const { name, price, imageUrl } = product
     const { addItemToCart } = useContext(CartContext)
 
-    const image = (imageUrl.includes('https')) ? imageUrl : require(`../../images/products/${imageUrl}`)
+    console.log(imageUrl)
+    //const image = (imageUrl.includes('https')) ? imageUrl : require(`../../images/products/${imageUrl}`)
+    const image = require(`../../images/products/${imageUrl}`)
     
     const handleClick = () => {
         addItemToCart(product)

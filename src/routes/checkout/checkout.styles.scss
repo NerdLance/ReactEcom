@@ -28,4 +28,10 @@
       margin-left: auto;
       font-size: 36px;
     }
-  }
+}
+
+@media only screen and (max-width: 768px) {
+    .checkout-container {
+        width: 90%;
+    }
+}
