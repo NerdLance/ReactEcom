@@ -6,9 +6,10 @@
   
     img {
       width: 30%;
+      object-fit: cover;
     }
   
-    .item-details {
+    .cart-item-details {
       width: 70%;
       display: flex;
       flex-direction: column;
@@ -16,7 +17,7 @@
       justify-content: center;
       padding: 10px 20px;
   
-      .name {
+      .cart-item-name {
         font-size: 16px;
       }
     }

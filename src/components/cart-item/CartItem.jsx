@@ -1,12 +1,17 @@
 import './cartitem.styles.scss'
 
 const CartItem = ({cartItem}) => {
-    const { name, quantity} = cartItem
+    const { name, quantity, imageUrl, price } = cartItem
+
+    const image = require(`../../images/products/${imageUrl}`)
     return (
-        <div>
-            <div>
-                <h3 className='name'>{name}</h3>
-                <span>x {quantity}</span>
+        <div className='cart-item-container'>
+            <img src={image} alt={name} />
+            <div className='cart-item-details'>
+                <span className='cart-item-name'>{name}</span>
+                <span className='cart-item-price'>
+                    {quantity} x {price}
+                </span>
             </div>
         </div>
     )
