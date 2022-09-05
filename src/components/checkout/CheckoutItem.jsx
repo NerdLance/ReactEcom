@@ -36,7 +36,7 @@ const CheckoutItem = ({item}) => {
                     &#10095;
                 </div>
             </span>
-            <span className='checkout-item-price'>{price}</span>
+            <span className='checkout-item-price'>${price}<br />(${price * quantity})</span>
             <div className='remove-button' onClick={handleRemove}>&#10005;</div>
         </div>
     )
