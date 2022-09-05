@@ -6,7 +6,11 @@ import { CategoriesContext } from '../../contexts/CategoriesContext'
 import ProductCard from '../../components/product-card/ProductCard'
 import Button from '../../components/button/Button'
 
-import './shopcategory.styles.scss'
+import {
+    ShopCategoryTitle,
+    ShopCategoryContainer,
+    ShopCategoryBackButtonContainer
+} from './shopcategory.styles.jsx'
 
 const ShopCategory = () => {
     const { categoriesMap } = useContext(CategoriesContext)
@@ -20,8 +24,8 @@ const ShopCategory = () => {
     
     return (
         <>
-            <h2 className='shop-category-title'>{category.toUpperCase()}</h2>
-            <div className='shop-category-container'>
+            <ShopCategoryTitle>{category.toUpperCase()}</ShopCategoryTitle>
+            <ShopCategoryContainer>
                     { products &&
                         products.map(product => {
                             return (
@@ -29,12 +33,12 @@ const ShopCategory = () => {
                             )
                         })
                     }
-            </div>
-            <div className='shop-category-back-button-container'>
+            </ShopCategoryContainer>
+            <ShopCategoryBackButtonContainer>
                 <Link to='..'>
                     <Button>BACK TO SHOP</Button>
                 </Link>
-            </div>
+            </ShopCategoryBackButtonContainer>
         </>
     )
 }

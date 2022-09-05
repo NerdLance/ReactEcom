@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom'
 
-import Categories from '../../components/categories/Categories'
+import Directories from '../../components/directories/Directories'
 
 import { bg1, bg2, bg3, bg4, bg5 } from '../../images/image-import'
 
 const Home = () => {
-  const categories = [
+  const directories = [
     {
       id: 1,
       title: 'Ground Coffee',
@@ -36,7 +36,7 @@ const Home = () => {
   return (
     <div>
         <Outlet />
-        <Categories categories={categories} />
+        <Directories directories={directories} />
     </div>
   );
 }

@@ -6,7 +6,9 @@ import FormInput from '../form-input/FormInput'
 
 import { UserContext } from '../../contexts/UserContext'
 
-import './signupform.styles.scss'
+import {
+    SignupContainer
+} from './signupform.styles.jsx'
 
 const defaultFormFields = {
     displayName: '',
@@ -59,7 +61,7 @@ const SignupForm = () => {
     }
 
     return (
-        <div className='sign-up-container'>
+        <SignupContainer>
             <h2>Don't have an account?</h2>
             <span>Sign up with your email and password</span>
             <form onSubmit={handleSubmit}>
@@ -69,7 +71,7 @@ const SignupForm = () => {
                 <FormInput label='Confirm Password' type='password' required onChange={handleChange} name='confirmPassword' value={confirmPassword} />
                 <Button type='submit'>Sign Up</Button>
             </form>
-        </div>
+        </SignupContainer>
     )
 }
 

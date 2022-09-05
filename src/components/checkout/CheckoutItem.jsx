@@ -1,7 +1,16 @@
 import { useContext } from 'react'
 import { CartContext } from '../../contexts/CartContext'
 
-import './checkoutitem.styles.scss'
+import {
+    CheckoutItemContainer,
+    CheckoutImageContainer,
+    CheckoutItemName,
+    CheckoutItemPrice,
+    CheckoutItemQuantity,
+    CheckoutItemQuantityArrow,
+    CheckoutItemQuantityValue,
+    CheckoutItemRemoveButton
+} from './checkoutitem.styles.jsx'
 
 const CheckoutItem = ({item}) => {
     const { addItemToCart, decreaseItemInCart, removeItemInCart } = useContext(CartContext)
@@ -22,23 +31,23 @@ const CheckoutItem = ({item}) => {
     }
 
     return (
-        <div className='checkout-item-container'>
-            <div className='checkout-image-container'>
+        <CheckoutItemContainer>
+            <CheckoutImageContainer>
                 <img src={image} alt={name}/>
-            </div>
-            <span className='checkout-item-name'>{name}</span>
-            <span className='checkout-item-quantity'>
-                <div className='arrow' onClick={handleDecrease}>
+            </CheckoutImageContainer>
+            <CheckoutItemName>{name}</CheckoutItemName>
+            <CheckoutItemQuantity>
+                <CheckoutItemQuantityArrow onClick={handleDecrease}>
                     &#10094;
-                </div>
-                <span className='value'>{quantity}</span>
-                <div className='arrow' onClick={handleIncrease}>
+                </CheckoutItemQuantityArrow>
+                <CheckoutItemQuantityValue>{quantity}</CheckoutItemQuantityValue>
+                <CheckoutItemQuantityArrow onClick={handleIncrease}>
                     &#10095;
-                </div>
-            </span>
-            <span className='checkout-item-price'>${price}<br />(${price * quantity})</span>
-            <div className='remove-button' onClick={handleRemove}>&#10005;</div>
-        </div>
+                </CheckoutItemQuantityArrow>
+            </CheckoutItemQuantity>
+            <CheckoutItemPrice>${price}<br />{(quantity > 1) && `($${price * quantity})`}</CheckoutItemPrice>
+            <CheckoutItemRemoveButton onClick={handleRemove}>&#10005;</CheckoutItemRemoveButton>
+        </CheckoutItemContainer>
     )
 }
 

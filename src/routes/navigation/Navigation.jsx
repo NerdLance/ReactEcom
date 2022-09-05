@@ -9,7 +9,12 @@ import { signOutUser } from '../../utils/firebase/firebase.utils'
 import CartIcon from '../../components/cart-icon/CartIcon'
 import CartDropdown from '../../components/cart-dropdown/CartDropdown'
 
-import './navigation.styles.scss'
+import {
+    NavigationContainer,
+    NavigationLogoContainer,
+    NavigationLinksContainer,
+    NavigationLink
+} from './navigation.styles.jsx'
 
 const Navigation = () => {
     const { currentUser } = useContext(UserContext)
@@ -17,29 +22,29 @@ const Navigation = () => {
 
     return (
         <>
-            <nav className='navigation'>
-                <Link className='navigation-logo-container' to='/'>
+            <NavigationContainer>
+                <NavigationLogoContainer to='/'>
                     <CoffeeLogo className='coffee-logo' />
-                </Link>
-                <div className='navigation-links-container'>
-                    <Link className='navigation-link' to='/shop'>
+                </NavigationLogoContainer>
+                <NavigationLinksContainer>
+                    <NavigationLink className='navigation-link' to='/shop'>
                         SHOP
-                    </Link>
+                    </NavigationLink>
                     {
                         currentUser ? (
-                            <span className='navigation-link' onClick={signOutUser}>LOGOUT</span>
+                            <NavigationLink as='span' onClick={signOutUser}>LOGOUT</NavigationLink>
                         ) : (
-                            <Link className='navigation-link' to='/auth'>
+                            <NavigationLink to='/auth'>
                                 LOGIN
-                            </Link>
+                            </NavigationLink>
                         )
                     }
                     <CartIcon/>
-                </div>
+                </NavigationLinksContainer>
                 {
                     isOpen && <CartDropdown />
                 }
-            </nav>
+            </NavigationContainer>
             <Outlet />
         </>
     )
