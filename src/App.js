@@ -2,8 +2,14 @@ import { Routes, Route } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { onAuthStateChangedListener, createUserDocumentFromAuth } from './utils/firebase/firebase.utils'
-import { setCurrentUser } from './store/user/user-action'
+import { 
+  getCategoriesAndDocuments,
+  onAuthStateChangedListener, 
+  createUserDocumentFromAuth 
+} from './utils/firebase/firebase.utils'
+
+import { setCurrentUser } from './store/user/user.action'
+import { setCategoriesMap } from './store/categories/category.action'
 
 import Home from './routes/home/Home'
 import Navigation from './routes/navigation/Navigation'
@@ -23,6 +29,15 @@ const App = () => {
         dispatch(setCurrentUser(user))
     })
     return unsubscribe
+  }, [])
+
+  useEffect(() => {
+    const getCategoriesMap = async () => {
+        const categoryMap = await getCategoriesAndDocuments()
+        dispatch(setCategoriesMap(categoryMap))
+    }
+
+    getCategoriesMap()
   }, [])
   
   return (

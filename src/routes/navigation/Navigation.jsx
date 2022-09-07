@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { ReactComponent as CoffeeLogo } from '../../images/branding/coffee-svg-icon.svg'
 import { CartContext } from '../../contexts/CartContext'
 import { signOutUser } from '../../utils/firebase/firebase.utils'
-import { selectCurrentUser } from '../../store/user/user-selector'
+import { selectCurrentUser } from '../../store/user/user.selector'
 
 import CartIcon from '../../components/cart-icon/CartIcon'
 import CartDropdown from '../../components/cart-dropdown/CartDropdown'

@@ -1,7 +1,8 @@
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
-import { useContext, useState, useEffect } from 'react'
-import { CategoriesContext } from '../../contexts/CategoriesContext'
+import { selectCategoriesMap } from '../../store/categories/category.selector'
 
 import ProductCard from '../../components/product-card/ProductCard'
 import Button from '../../components/button/Button'
@@ -13,10 +14,9 @@ import {
 } from './shopcategory.styles.jsx'
 
 const ShopCategory = () => {
-    const { categoriesMap } = useContext(CategoriesContext)
+    const categoriesMap = useSelector(selectCategoriesMap)
     const { category } = useParams()
     const [products, setProducts] = useState(categoriesMap[category])
-    const navigate = useNavigate()
     
     useEffect(() => {
         setProducts(categoriesMap[category])
