@@ -14,11 +14,13 @@ import {
 } from './shopcategory.styles.jsx'
 
 const ShopCategory = () => {
-    const categoriesMap = useSelector(selectCategoriesMap)
     const { category } = useParams()
+    console.log('render/re-rendering category component')
+    const categoriesMap = useSelector(selectCategoriesMap)
     const [products, setProducts] = useState(categoriesMap[category])
     
     useEffect(() => {
+        console.log('effect fired. calling set products')
         setProducts(categoriesMap[category])
     }, [category, categoriesMap])
     
