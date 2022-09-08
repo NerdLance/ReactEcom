@@ -1,10 +1,8 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils'
 
 import Button from '../button/Button'
 import FormInput from '../form-input/FormInput'
-
-import { UserContext } from '../../contexts/UserContext'
 
 import {
     SignupContainer
@@ -35,7 +33,7 @@ const SignupForm = () => {
             errors.push('Passwords Do Not Match')
         }
 
-        if (errors.length == 0) {
+        if (errors.length === 0) {
             try {
                 const { user } = await createAuthUserWithEmailAndPassword(email, password)
                 await createUserDocumentFromAuth(user, { displayName })

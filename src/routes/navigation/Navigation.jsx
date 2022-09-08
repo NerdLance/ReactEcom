@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import { ReactComponent as CoffeeLogo } from '../../images/branding/coffee-svg-icon.svg'

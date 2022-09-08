@@ -1,6 +1,3 @@
-import { useContext } from 'react'
-import { CategoriesContext } from '../../contexts/CategoriesContext'
-
 import { Link } from 'react-router-dom'
 
 import ProductCard from '../product-card/ProductCard'
