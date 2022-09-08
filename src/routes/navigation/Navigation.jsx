@@ -1,11 +1,10 @@
-import { useContext } from 'react'
 import { Outlet } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import { ReactComponent as CoffeeLogo } from '../../images/branding/coffee-svg-icon.svg'
-import { CartContext } from '../../contexts/CartContext'
 import { signOutUser } from '../../utils/firebase/firebase.utils'
 import { selectCurrentUser } from '../../store/user/user.selector'
+import { selectCartIsOpen } from '../../store/cart/cart.selector'
 
 import CartIcon from '../../components/cart-icon/CartIcon'
 import CartDropdown from '../../components/cart-dropdown/CartDropdown'
@@ -18,9 +17,8 @@ import {
 } from './navigation.styles.jsx'
 
 const Navigation = () => {
-    // const { currentUser } = useContext(UserContext)
     const currentUser = useSelector(selectCurrentUser)
-    const { isOpen } = useContext(CartContext)
+    const isOpen = useSelector(selectCartIsOpen)
 
     return (
         <>
