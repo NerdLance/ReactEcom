@@ -10,6 +10,7 @@ import {
 
 import { setCurrentUser } from './store/user/user.action'
 import { setCategories } from './store/categories/category.action'
+import { fetchCategoriesAsync } from './store/categories/category.action'
 
 import Home from './routes/home/Home'
 import Navigation from './routes/navigation/Navigation'
@@ -32,12 +33,7 @@ const App = () => {
   }, [])
 
   useEffect(() => {
-    const getCategoriesMap = async () => {
-        const categoriesArray = await getCategoriesAndDocuments()
-        dispatch(setCategories(categoriesArray))
-    }
-
-    getCategoriesMap()
+    dispatch(fetchCategoriesAsync())
   }, [])
   
   return (
